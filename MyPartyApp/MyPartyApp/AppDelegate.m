@@ -16,10 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MapViewController *mapViewController = [[MapViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mapViewController];
-    self.revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:nav];
-    
     return YES;
 }
 							

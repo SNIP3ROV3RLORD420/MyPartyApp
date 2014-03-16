@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "MapViewController.h"
 
 @interface LoginViewController ()
 
@@ -36,9 +37,11 @@
      if (Account.name == username.text && Account.password == password.text)
          [self.NavigationController performSegue:toMap];
      else --> throw input mismatch exception ie...
-          errorMessage.text = Wrong password or Username.
+          errorMessage.text = @"Wrong password or Username"
      }
+     for now just peform the segue
      */
+    [self.navigationController performSegueWithIdentifier:@"map" sender:self];
 }
 
 - (IBAction)createAccount:(id)sender {
@@ -47,5 +50,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //set delegate and user for account when segueing to map View after succeful log in
+    if ([[segue identifier] isEqualToString:@"toMap"]){
+        /*
+         Will implement later --> Get User based on Username.text and password.text inside database of accounts
+         
+         NSArray *accounts= [database getAccounts];
+         for (User *usa in accounts){
+            if ([usa.username isEqualToString:username.text])
+                [map setAccount:usa];
+         }
+         */
+    }
 }
 @end

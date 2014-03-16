@@ -8,9 +8,21 @@
 
 #import "Event.h"
 
+
 @implementation Event
 
 @synthesize eventName, eventDate, eventDescription, eventLocation, maxCapacity, invited, hosts, blacklist, BYOB, Private, ageBased, rolled, price;
+
+#pragma mark - Event Initialization
+
+//Use this method to initialize an Event from a specific list -->
+//Enables user to have preset lists that they select, then at runtime the event is initialized with that list.
+- (id)initWithSpecifiedList:(NSMutableArray*)list{
+    self.invited = list;
+    return self;
+}
+
+#pragma mark - Event Class Methods
 
 - (void)addHost:(User *)u{
     BOOL isAHost = NO;
@@ -87,9 +99,9 @@
 }
 
 - (float)percentFemale{
-    int femaleCount = 0;
-    int maleCount = 0;
-    NSMutableArray *presentGuests = self.presentGuests;
+    float femaleCount = 0.0;
+    float maleCount = 0.0;
+    NSMutableArray *presentGuests = [self presentGuests];
     for (User *aUser in presentGuests){
         if (aUser.gender == GenderMale) {
             maleCount++;
@@ -106,8 +118,7 @@
 }
 
 - (int)currentNumberOfGuests{
-    NSMutableArray *currentGuests = self.presentGuests;
-    return currentGuests.count;
+    return [[self presentGuests] count];
 }
 
 @end

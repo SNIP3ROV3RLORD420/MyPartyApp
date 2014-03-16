@@ -68,7 +68,7 @@ typedef NSUInteger Gender;
 
 - (int)getAge;                                //for ease of getting users age based off DOB
 
-- (CLLocation*)getCurrentLocation;//needed to implement this...get rid of prop?
+- (CLLocation*)getCurrentLocation;            //needed to implement this...get rid of prop?
 
 - (void)addFreind:(User*)u;                   //add a freind to your freind list
 

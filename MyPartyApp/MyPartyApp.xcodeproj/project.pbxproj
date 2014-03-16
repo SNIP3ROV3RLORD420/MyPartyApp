@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF02CF8018D63CD500D3C046 /* SideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF02CF7F18D63CD500D3C046 /* SideViewController.m */; };
 		BF9AA41518D59106001D2D75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9AA41418D59106001D2D75 /* Foundation.framework */; };
 		BF9AA41718D59106001D2D75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9AA41618D59106001D2D75 /* CoreGraphics.framework */; };
 		BF9AA41918D59106001D2D75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9AA41818D59106001D2D75 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF02CF7E18D63CD500D3C046 /* SideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewController.h; sourceTree = "<group>"; };
+		BF02CF7F18D63CD500D3C046 /* SideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewController.m; sourceTree = "<group>"; };
 		BF9AA41118D59106001D2D75 /* MyPartyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPartyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9AA41418D59106001D2D75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF9AA41618D59106001D2D75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +141,8 @@
 				BF9AA42A18D59106001D2D75 /* LoginViewController.m */,
 				BFD0F1B018D5969500B74D75 /* MapViewController.h */,
 				BFD0F1B118D5969500B74D75 /* MapViewController.m */,
+				BF02CF7E18D63CD500D3C046 /* SideViewController.h */,
+				BF02CF7F18D63CD500D3C046 /* SideViewController.m */,
 				BF9AA42C18D59106001D2D75 /* Images.xcassets */,
 				BF9AA41B18D59106001D2D75 /* Supporting Files */,
 			);
@@ -284,6 +289,7 @@
 				BF9AA42B18D59106001D2D75 /* LoginViewController.m in Sources */,
 				BF9AA42518D59106001D2D75 /* AppDelegate.m in Sources */,
 				BFD0F1B618D59C3500B74D75 /* User.m in Sources */,
+				BF02CF8018D63CD500D3C046 /* SideViewController.m in Sources */,
 				BFD0F1B218D5969500B74D75 /* MapViewController.m in Sources */,
 				BFD0F1AF18D5932500B74D75 /* PPRevealSideViewController.m in Sources */,
 				BF9AA42118D59106001D2D75 /* main.m in Sources */,
