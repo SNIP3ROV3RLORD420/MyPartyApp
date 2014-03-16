@@ -24,6 +24,8 @@
     NSMutableArray *hosts;                                  //the hosts of the party
     NSMutableArray *blacklist;                               //Party will not show for black listed people
     //NSMutableArray *comments --> IDK if implement here, but basically facebook wall in event
+    NSMutableArray *arrived;
+    
     
     BOOL *BYOB;                                             //Bring your own beer
     BOOL *Private;                                          //only friends can see the event
@@ -31,6 +33,10 @@
     BOOL *rolled;                                           //if event is over
     
     float *price;                                           //possibly implement price based off age
+    
+    
+    int numberOfMales; //makes percentFemale more efficient
+    int numberOfFemales;
 }
 /*
  -------------------Getters and Setters----------------------------
@@ -66,6 +72,8 @@
 
 - (NSMutableArray*)presentGuests;                               //people who are at event
 - (NSMutableArray*)notPresentGuests;                            //people who arent yet
+
+-(BOOL)guestArrived:(User *)u;
 
 - (float)percentFemale;                                         //will return decimal percent of females
 

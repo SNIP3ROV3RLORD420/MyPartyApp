@@ -32,10 +32,9 @@
 
 - (void)addGuest:(User *)u{
     BOOL isInvited = NO;
-    for (User *aUser in invited){
-        if ([aUser.username isEqualToString:u.username]) {
-            isInvited = YES;
-        }
+    if([invited containsObject:u])
+    {
+        isInvited = YES;
     }
     if (!isInvited) {
         [invited insertObject:u atIndex:0];
@@ -50,10 +49,9 @@
 
 - (void)blacklistGuest:(User *)u{
     BOOL isBlackListed = NO;
-    for (User *aUser in blacklist){
-        if ([aUser.username isEqualToString:u.username]) {
-            isBlackListed = YES;
-        }
+    if([blacklist containsObject:u])
+    {
+        isBlackListed = YES;
     }
     if (!isBlackListed) {
         [blacklist insertObject:u atIndex:0];
@@ -66,48 +64,41 @@
     [blacklist removeObject:u];
 }
 
-- (NSMutableArray*)presentGuests{
-    NSMutableArray *arrived = [[NSMutableArray alloc]init];
-    for (User *aUser in invited){
-        if ([aUser hasArrived:self]) {
-            [arrived insertObject:aUser atIndex:0];
-        }
+-(BOOL)guestArrived: (User *)u
+{
+    //called by the ViewController when a user gets to an event
+    if(![u hasArrived:self])
+    {
+        //if the user isnt physically here => returns no
+        return NO;
     }
-    return arrived;
+    //else adds user to arrived, returns yes
+    [arrived addObject:u];
+    return YES;
+}
+
+- (NSMutableArray*)presentGuests{
+    return arrived.copy;
 }
 
 - (NSMutableArray*)notPresentGuests{
-    NSMutableArray *notArrived = [[NSMutableArray alloc]init];
-    for (User *aUser in invited){
-        if (![aUser hasArrived:self]) {
-            [notArrived insertObject:aUser atIndex:0];
+    NSMutableArray* notArrived = [[NSMutableArray alloc] init];
+    for(User* temp in invited)    {
+        if(![arrived containsObject:temp])
+        {
+            [notArrived addObject:temp];
         }
     }
     return notArrived;
 }
 
 - (float)percentFemale{
-    int femaleCount = 0;
-    int maleCount = 0;
-    NSMutableArray *presentGuests = self.presentGuests;
-    for (User *aUser in presentGuests){
-        if (aUser.gender == GenderMale) {
-            maleCount++;
-        }
-        if (aUser.gender == GenderFemale){
-            femaleCount++;
-        }
-        if (aUser.gender == GenderTranny){
-            maleCount++;
-            femaleCount++;
-        }
-    }
-    return femaleCount / (maleCount + femaleCount);
+
+    return numberOfFemales / (numberOfMales + numberOfFemales);
 }
 
 - (int)currentNumberOfGuests{
-    NSMutableArray *currentGuests = self.presentGuests;
-    return currentGuests.count;
+    return numberOfFemales + numberOfMales;
 }
 
 @end
