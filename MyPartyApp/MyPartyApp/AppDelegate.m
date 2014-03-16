@@ -7,12 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import "MapViewController.h"
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize revealSideViewController = _revealSideViewController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    MapViewController *mapViewController = [[MapViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mapViewController];
+    self.revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:nav];
+    
     return YES;
 }
 							

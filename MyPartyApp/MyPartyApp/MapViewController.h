@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MapViewController.h
 //  MyPartyApp
 //
 //  Created by Dylan Humphrey on 3/16/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MapViewController : UIViewController
 
 @end
