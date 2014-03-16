@@ -23,6 +23,8 @@
 		BF9AA44018D59106001D2D75 /* MyPartyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9AA43F18D59106001D2D75 /* MyPartyAppTests.m */; };
 		BFD0F1AF18D5932500B74D75 /* PPRevealSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0F1AE18D5932500B74D75 /* PPRevealSideViewController.m */; };
 		BFD0F1B218D5969500B74D75 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0F1B118D5969500B74D75 /* MapViewController.m */; };
+		BFD0F1B618D59C3500B74D75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0F1B518D59C3500B74D75 /* User.m */; };
+		BFD0F1B818D59EBA00B74D75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD0F1B718D59EBA00B74D75 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		BFD0F1AE18D5932500B74D75 /* PPRevealSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPRevealSideViewController.m; path = ../../vendor/PPRevealSideViewController/PPRevealSideViewController/PPRevealSideviewController/PPRevealSideViewController.m; sourceTree = "<group>"; };
 		BFD0F1B018D5969500B74D75 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		BFD0F1B118D5969500B74D75 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		BFD0F1B418D59C3500B74D75 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		BFD0F1B518D59C3500B74D75 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		BFD0F1B718D59EBA00B74D75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD0F1B818D59EBA00B74D75 /* MapKit.framework in Frameworks */,
 				BF9AA41718D59106001D2D75 /* CoreGraphics.framework in Frameworks */,
 				BF9AA41918D59106001D2D75 /* UIKit.framework in Frameworks */,
 				BF9AA41518D59106001D2D75 /* Foundation.framework in Frameworks */,
@@ -107,6 +113,7 @@
 		BF9AA41318D59106001D2D75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFD0F1B718D59EBA00B74D75 /* MapKit.framework */,
 				BF9AA41418D59106001D2D75 /* Foundation.framework */,
 				BF9AA41618D59106001D2D75 /* CoreGraphics.framework */,
 				BF9AA41818D59106001D2D75 /* UIKit.framework */,
@@ -118,6 +125,7 @@
 		BF9AA41A18D59106001D2D75 /* MyPartyApp */ = {
 			isa = PBXGroup;
 			children = (
+				BFD0F1B318D59C1800B74D75 /* Model */,
 				BFD0F1AD18D5932500B74D75 /* PPRevealSideViewController.h */,
 				BFD0F1AE18D5932500B74D75 /* PPRevealSideViewController.m */,
 				BF9AA42318D59106001D2D75 /* AppDelegate.h */,
@@ -160,6 +168,15 @@
 				BF9AA43C18D59106001D2D75 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFD0F1B318D59C1800B74D75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFD0F1B418D59C3500B74D75 /* User.h */,
+				BFD0F1B518D59C3500B74D75 /* User.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +278,7 @@
 			files = (
 				BF9AA42B18D59106001D2D75 /* LoginViewController.m in Sources */,
 				BF9AA42518D59106001D2D75 /* AppDelegate.m in Sources */,
+				BFD0F1B618D59C3500B74D75 /* User.m in Sources */,
 				BFD0F1B218D5969500B74D75 /* MapViewController.m in Sources */,
 				BFD0F1AF18D5932500B74D75 /* PPRevealSideViewController.m in Sources */,
 				BF9AA42118D59106001D2D75 /* main.m in Sources */,
