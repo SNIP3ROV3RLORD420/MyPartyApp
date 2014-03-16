@@ -38,7 +38,7 @@ typedef NSUInteger Gender;
     
     NSDate *DOB;                              //age --> make events more exclusive
     
-    NSMutableArray *freindsList;              //make freinds
+    NSMutableArray *friendsList;              //make freinds
     
     BOOL *pushCurrentLocation;                //if user wants freinds to see where he/she is
     
@@ -58,7 +58,7 @@ typedef NSUInteger Gender;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, strong, getter = getBirthday) NSDate *DOB;
 
-@property (nonatomic, strong) NSMutableArray *freindsList;
+@property (nonatomic, strong) NSMutableArray *friendsList;
 
 @property (nonatomic) BOOL *pushCurrentLocation;
 /*
@@ -70,8 +70,8 @@ typedef NSUInteger Gender;
 
 - (CLLocation*)getCurrentLocation;            //needed to implement this...get rid of prop?
 
-- (void)addFreind:(User*)u;                   //add a freind to your freind list
+- (void)addFriend:(User*)u;                   //add a freind to your freind list
 
-- (void)removeFreind:(User*)u;                //remove a freind :(
+- (void)removeFriend:(User*)u;                //remove a freind :(
 
 @end
