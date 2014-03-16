@@ -7,6 +7,7 @@
 //
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
 @class Event;   //to avoid compiling issues :D
@@ -23,7 +24,7 @@ typedef NSUInteger interestedIn;
 enum{
     GenderMale =   1,
     GenderFemale = 2,
-    GenderBoth =   3                          //lol
+    GenderTranny = 3                          //lol
 };
 typedef NSUInteger Gender;
 
@@ -33,11 +34,14 @@ typedef NSUInteger Gender;
     NSString *password;
     NSString *home;                           //used for Quick Host button
     
-    CLLocationCoordinate2D *currentLocation;  //used for navigation --> make method instead
+    CLLocationManager *locationManager;       //to get current location
     
     NSDate *DOB;                              //age --> make events more exclusive
     
-    NSMutableArray *freindsList               //make freinds
+    NSMutableArray *freindsList;              //make freinds
+    
+    BOOL *pushCurrentLocation;                //if user wants freinds to see where he/she is
+    
     //add more stuff that I'm forgetting
 }
 
@@ -51,17 +55,23 @@ typedef NSUInteger Gender;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *home;
 
-@property (nonatomic, getter = getCurrentLocation) CLLocationCoordinate2D *currentLocation;
-
+@property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, strong, getter = getBirthday) NSDate *DOB;
+
+@property (nonatomic, strong) NSMutableArray *freindsList;
+
+@property (nonatomic) BOOL *pushCurrentLocation;
 /*
- ------------------Methods-------------------------------------
+ ---------------Create Methods-------------------------------------
  */
-- (BOOL)hasArrived:(Event*)selecteEvent;      //used to see whos at event
+- (BOOL)hasArrived:(Event*)selectedEvent;      //used to see whos at event
 
 - (int)getAge;                                //for ease of getting users age based off DOB
 
-- (CLLocationCoordinate2D*)getCurrentLocation;//needed to implement this...get rid of prop?
+- (CLLocation*)getCurrentLocation;//needed to implement this...get rid of prop?
 
-- (void)
+- (void)addFreind:(User*)u;                   //add a freind to your freind list
+
+- (void)removeFreind:(User*)u;                //remove a freind :(
+
 @end
