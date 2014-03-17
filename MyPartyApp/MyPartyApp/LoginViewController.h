@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "PPRevealSideViewController.h"
 
 @interface LoginViewController : UIViewController
 
@@ -16,6 +17,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorMessage;
 
 - (IBAction)logIn:(id)sender;
-- (IBAction)createAccount:(id)sender;
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3WN-H5-1f9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wj8-hL-ysI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -48,7 +48,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ti6-nq-2Lp"/>
-                                    <segue destination="a8c-gv-6Yw" kind="push" identifier="map" id="qWw-RH-uIw"/>
+                                    <segue destination="a8c-gv-6Yw" kind="push" id="Sve-NO-Bay"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="337-te-1eF">
@@ -102,12 +102,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="311" y="100"/>
+            <point key="canvasLocation" x="260" y="44"/>
         </scene>
-        <!--Map View Controller - Our App Name-->
+        <!--Navigation Controller-->
+        <scene sceneID="sjD-xR-NFO">
+            <objects>
+                <navigationController storyboardIdentifier="Nav" definesPresentationContext="YES" id="wj8-hL-ysI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LzP-cv-j1k"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRM-H5-Al2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="9c9-yN-ZMG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oy9-np-0mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-134" y="44"/>
+        </scene>
+        <!--Map View Controller - MapViewController-->
         <scene sceneID="xNm-js-Led">
             <objects>
-                <viewController id="a8c-gv-6Yw" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" title="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a8c-gv-6Yw" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bhn-yf-WnQ"/>
                         <viewControllerLayoutGuide type="bottom" id="Kfy-VP-TI6"/>
@@ -124,7 +140,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Our App Name" id="x1D-r1-EfB">
-                        <barButtonItem key="leftBarButtonItem" title="Show" id="alH-4z-T2u"/>
+                        <barButtonItem key="leftBarButtonItem" title="Show" id="alH-4z-T2u">
+                            <connections>
+                                <action selector="showLeft:" destination="a8c-gv-6Yw" id="Wf7-YT-14c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -133,28 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xv-Po-Pdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="100"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Czu-OV-bmE">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3WN-H5-1f9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="RSb-QD-dud"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wFX-Xp-zsg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="cjo-b1-WUm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l3I-hI-V3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-121" y="100"/>
+            <point key="canvasLocation" x="684" y="44"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "SideViewController.h"
 
 @interface MapViewController ()
 
@@ -18,7 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self];
+    _revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:nav];
+    
+    [self.view addSubview:_revealSideViewController.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,4 +45,6 @@
 }
 */
 
+- (IBAction)showLeft:(id)sender {
+}
 @end

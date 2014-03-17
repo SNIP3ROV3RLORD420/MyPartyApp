@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MapViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 

@@ -41,16 +41,12 @@
      }
      for now just peform the segue
      */
-    [self.navigationController performSegueWithIdentifier:@"map" sender:self];
 }
 
-- (IBAction)createAccount:(id)sender {
-    //no need for this method actually, just use storyboard to segue to a create account view controller
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //set delegate and user for account when segueing to map View after succeful log in
-    if ([[segue identifier] isEqualToString:@"toMap"]){
+    if ([[segue identifier] isEqualToString:@"map"]){
         /*
          Will implement later --> Get User based on Username.text and password.text inside database of accounts
          
