@@ -105,35 +105,11 @@
 }
 
 - (float)percentFemale{
-<<<<<<< HEAD
-    float femaleCount = 0.0;
-    float maleCount = 0.0;
-    NSMutableArray *presentGuests = [self presentGuests];
-    for (User *aUser in presentGuests){
-        if (aUser.gender == GenderMale) {
-            maleCount++;
-        }
-        if (aUser.gender == GenderFemale){
-            femaleCount++;
-        }
-        if (aUser.gender == GenderTranny){
-            maleCount++;
-            femaleCount++;
-        }
-    }
-    return femaleCount / (maleCount + femaleCount);
-}
-
-- (int)currentNumberOfGuests{
-    return [[self presentGuests] count];
-=======
-
-    return numberOfFemales / (numberOfMales + numberOfFemales);
+    return (float)numberOfFemales / (numberOfFemales + numberOfMales);
 }
 
 - (int)currentNumberOfGuests{
     return numberOfFemales + numberOfMales;
->>>>>>> FETCH_HEAD
 }
 
 @end

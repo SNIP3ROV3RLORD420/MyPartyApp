@@ -35,7 +35,7 @@
     float *price;                                           //possibly implement price based off age
     
     
-    int numberOfMales; //makes percentFemale more efficient
+    int numberOfMales;                                      //makes percentFemale more efficient
     int numberOfFemales;
 }
 /*
