@@ -44,28 +44,38 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 5;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *i = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:i];
+    if (!cell){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:i];
+    }
     
-    // Configure the cell...
-    
+    if (indexPath.row == 0)
+        cell.textLabel.text = @"My Account";
+    if (indexPath.row == 1)
+        cell.textLabel.text = @"Nearby Events";
+    if (indexPath.row == 2)
+        cell.textLabel.text = @"Settings";
+    if (indexPath.row == 3)
+        cell.textLabel.text = @"About";
+    if (indexPath.row == 4)
+        cell.textLabel.text = @"Other";
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

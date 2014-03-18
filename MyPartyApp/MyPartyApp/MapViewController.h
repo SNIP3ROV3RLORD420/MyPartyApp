@@ -16,7 +16,5 @@
 @property (weak, nonatomic) IBOutlet MKMapView *map;
 @property (strong, nonatomic) PPRevealSideViewController *revealSideViewController;
 
-- (IBAction)showLeft:(id)sender;
-
 - (NSMutableArray*)allCurrentAvailableParties:(User*)u;                 //will be a list of all current available parties based on the settings of the User
 @end

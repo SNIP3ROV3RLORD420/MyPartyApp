@@ -15,17 +15,19 @@
 
 @implementation MapViewController
 
+@synthesize map;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self];
-    _revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:nav];
     
-    [self.view addSubview:_revealSideViewController.view];
+    self.title = @"Our app";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Show"
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self
+                                                                           action:@selector(showLeft:)];
+    [self.view addSubview:self.revealSideViewController.view];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +47,8 @@
 }
 */
 
-- (IBAction)showLeft:(id)sender {
+- (void)showLeft:(id)sender {
+    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionLeft animated:YES];
 }
+
 @end

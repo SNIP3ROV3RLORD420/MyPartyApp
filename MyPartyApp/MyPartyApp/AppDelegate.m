@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MapViewController.h"
+#import "SideViewController.h"
 #import "LoginViewController.h"
 
 @implementation AppDelegate
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    LoginViewController *lv = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    _revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:lv];
+    
+    [self.revealSideViewController setDirectionsToShowBounce:PPRevealSideDirectionNone];
+    [self.revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionContentView];
+    
+    self.window.rootViewController = _revealSideViewController;
     return YES;
 }
 							

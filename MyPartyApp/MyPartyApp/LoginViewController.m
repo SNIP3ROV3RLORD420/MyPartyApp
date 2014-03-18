@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SideViewController.h"
 #import "MapViewController.h"
 
 @interface LoginViewController ()
@@ -20,7 +21,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,17 +30,11 @@
 }
 
 - (IBAction)logIn:(id)sender {
-    //in this method access some sort of server side data base that stores all the accounts
-    /*implementation would look something like this
-    NSMutableArray *allAccounts = [dataBase getAccounts]; 
-    for (Account in allAccounts){
-     if (Account.name == username.text && Account.password == password.text)
-         [self.NavigationController performSegue:toMap];
-     else --> throw input mismatch exception ie...
-          errorMessage.text = @"Wrong password or Username"
-     }
-     for now just peform the segue
-     */
+    MapViewController *mv = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mv];
+    SideViewController *sv = [[SideViewController alloc]init];
+    [self.revealSideViewController preloadViewController:sv forSide:PPRevealSideDirectionLeft];
+    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES completion:^{PPRSLog(@"Poped Map")}];
 }
 
 
@@ -56,6 +50,7 @@
                 [map setAccount:usa];
          }
          */
+
     }
 }
 @end
