@@ -27,6 +27,7 @@
 		BFD0F1B618D59C3500B74D75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0F1B518D59C3500B74D75 /* User.m */; };
 		BFD0F1B818D59EBA00B74D75 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD0F1B718D59EBA00B74D75 /* MapKit.framework */; };
 		BFD0F1BB18D5B20800B74D75 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD0F1BA18D5B20800B74D75 /* Event.m */; };
+		BFE5149918D96B9F009D053E /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE5149818D96B9F009D053E /* AppState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		BFD0F1B718D59EBA00B74D75 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFD0F1B918D5B20800B74D75 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		BFD0F1BA18D5B20800B74D75 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		BFE5149718D96B9F009D053E /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
+		BFE5149818D96B9F009D053E /* AppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 				BFD0F1B518D59C3500B74D75 /* User.m */,
 				BFD0F1B918D5B20800B74D75 /* Event.h */,
 				BFD0F1BA18D5B20800B74D75 /* Event.m */,
+				BFE5149718D96B9F009D053E /* AppState.h */,
+				BFE5149818D96B9F009D053E /* AppState.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				BFD0F1B218D5969500B74D75 /* MapViewController.m in Sources */,
 				BFD0F1AF18D5932500B74D75 /* PPRevealSideViewController.m in Sources */,
 				BF9AA42118D59106001D2D75 /* main.m in Sources */,
+				BFE5149918D96B9F009D053E /* AppState.m in Sources */,
 				BFD0F1BB18D5B20800B74D75 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

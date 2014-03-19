@@ -30,27 +30,10 @@
 }
 
 - (IBAction)logIn:(id)sender {
-    MapViewController *mv = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mv];
-    SideViewController *sv = [[SideViewController alloc]init];
-    [self.revealSideViewController preloadViewController:sv forSide:PPRevealSideDirectionLeft];
-    [self.revealSideViewController popViewControllerWithNewCenterController:nav animated:YES completion:^{PPRSLog(@"Poped Map")}];
 }
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //set delegate and user for account when segueing to map View after succeful log in
-    if ([[segue identifier] isEqualToString:@"map"]){
-        /*
-         Will implement later --> Get User based on Username.text and password.text inside database of accounts
-         
-         NSArray *accounts= [database getAccounts];
-         for (User *usa in accounts){
-            if ([usa.username isEqualToString:username.text])
-                [map setAccount:usa];
-         }
-         */
-
+    if ([[segue identifier] isEqualToString:@"toMap"]){
     }
 }
 @end

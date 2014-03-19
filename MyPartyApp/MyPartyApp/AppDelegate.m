@@ -18,15 +18,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    LoginViewController *lv = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    _revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:lv];
+    UINavigationController *nav = [storyboard instantiateViewControllerWithIdentifier:@"nav"];
+    self.revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:nav];
     
-    [self.revealSideViewController setDirectionsToShowBounce:PPRevealSideDirectionNone];
-    [self.revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionContentView];
+    [self.revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionNavigationBar];
+    [self.revealSideViewController setTapInteractionsWhenOpened:PPRevealSideInteractionNavigationBar | PPRevealSideInteractionContentView];
+    [self.revealSideViewController setPanInteractionsWhenOpened:PPRevealSideInteractionNavigationBar];
     
-    self.window.rootViewController = _revealSideViewController;
+    SideViewController *sv = [[SideViewController alloc]init];
+    [self.revealSideViewController preloadViewController:sv forSide:PPRevealSideDirectionLeft];
+    
+    self.window.rootViewController = self.revealSideViewController;
+    
     return YES;
 }
 							

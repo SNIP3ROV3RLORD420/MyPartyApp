@@ -17,17 +17,11 @@
 
 @synthesize map;
 
+#pragma mark - Managing the view
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"Our app";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Show"
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self
-                                                                           action:@selector(showLeft:)];
-    [self.view addSubview:self.revealSideViewController.view];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,19 +30,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UI methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)goToCurrentLocation:(id)sender{
+    //implement this method
 }
-*/
+- (IBAction)showLeft:(id)sender {
+    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionLeft animated:YES completion:^{PPRSLog(@"Pushed")}];
+}
 
-- (void)showLeft:(id)sender {
-    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionLeft animated:YES];
+
+
+#pragma mark - Event methods
+- (NSMutableArray*)allCurrentAvailableParties:(User *)u{
+    NSMutableArray *temp;                                   //write method later
+    return temp;
 }
 
 @end
