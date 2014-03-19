@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AccountViewController.h"
 
-@interface SideViewController : UITableViewController
+@interface SideViewController : UITableViewController <AccountViewControllerDelegate>
 
 @end

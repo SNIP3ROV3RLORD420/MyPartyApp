@@ -27,7 +27,8 @@
     [self.revealSideViewController setPanInteractionsWhenOpened:PPRevealSideInteractionNavigationBar];
     
     SideViewController *sv = [[SideViewController alloc]init];
-    [self.revealSideViewController preloadViewController:sv forSide:PPRevealSideDirectionLeft];
+    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:sv];
+    [self.revealSideViewController preloadViewController:nav2 forSide:PPRevealSideDirectionLeft];
     
     self.window.rootViewController = self.revealSideViewController;
     
