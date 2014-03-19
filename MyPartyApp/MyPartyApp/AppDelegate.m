@@ -26,8 +26,7 @@
     [self.revealSideViewController setTapInteractionsWhenOpened:PPRevealSideInteractionNavigationBar | PPRevealSideInteractionContentView];
     [self.revealSideViewController setPanInteractionsWhenOpened:PPRevealSideInteractionNavigationBar];
     
-    SideViewController *sv = [[SideViewController alloc]init];
-    UINavigationController *nav2 = [[UINavigationController alloc]initWithRootViewController:sv];
+    UINavigationController *nav2 = [storyboard instantiateViewControllerWithIdentifier:@"nav2"];
     [self.revealSideViewController preloadViewController:nav2 forSide:PPRevealSideDirectionLeft];
     
     self.window.rootViewController = self.revealSideViewController;

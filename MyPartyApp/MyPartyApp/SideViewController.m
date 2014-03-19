@@ -41,7 +41,7 @@
 }
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -62,30 +62,14 @@
     if (!cell){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:i];
     }
-    
-    if (indexPath.row == 0)
-        cell.textLabel.text = @"My Account";
-    if (indexPath.row == 1)
-        cell.textLabel.text = @"Nearby Events";
-    if (indexPath.row == 2)
-        cell.textLabel.text = @"Settings";
-    if (indexPath.row == 3)
-        cell.textLabel.text = @"About";
-    if (indexPath.row == 4)
-        cell.textLabel.text = @"Other";
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0){
-        AccountViewController *av = [self.storyboard instantiateViewControllerWithIdentifier:@"Account"];
-        [self.navigationController pushViewController:av animated:YES];
-    }
-}
+*/
 
 #pragma mark - AccountViewController
 
 - (void)accountViewControllerDidFinish:(AccountViewController *)a{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+    
 @end
