@@ -9,7 +9,9 @@
 #import "MapViewController.h"
 #import "SideViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController (){
+    NSMutableArray *allCurrentEvents;
+}
 
 @end
 
@@ -22,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self performSelector:@selector(popLoginView) withObject:nil afterDelay:1.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,19 +35,20 @@
 
 #pragma mark - UI methods
 
-- (void)goToCurrentLocation:(id)sender{
-    //implement this method
-}
-- (IBAction)showLeft:(id)sender {
-    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionLeft animated:YES completion:^{PPRSLog(@"Pushed")}];
+- (IBAction)insertEvent:(id)sender{
+    
 }
 
+- (IBAction)showLeft:(id)sender {
+    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionBottom animated:YES completion:^{PPRSLog(@"Pushed")}];
+}
+
+- (void)popLoginView{
+    LoginViewController *lv = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+    [self presentViewController:lv animated:YES completion:^{PPRSLog(@"Presented")}];
+}
 
 
 #pragma mark - Event methods
-- (NSMutableArray*)allCurrentAvailableParties:(User *)u{
-    NSMutableArray *temp;                                   //write method later
-    return temp;
-}
 
 @end

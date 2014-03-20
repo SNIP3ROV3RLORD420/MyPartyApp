@@ -71,5 +71,14 @@
 - (void)accountViewControllerDidFinish:(AccountViewController *)a{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - Navigation
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if (segue) {
+        [self.delegate SideViewControllerWillSegue];
+    }
+}
     
 @end

@@ -30,10 +30,18 @@
 }
 
 - (IBAction)logIn:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{PPRSLog(@"Logged in")}];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"toMap"]){
-    }
+- (IBAction)create:(id)sender {
+    CreateAccountViewController *cv = [self.navigationController viewControllers][0];
+    [self.navigationController pushViewController:cv animated:YES];
 }
+
+#pragma mark - Create Account View Controller delegate
+
+- (void)createAccountViewControllerDidCancel:(CreateAccountViewController *)c{
+    [self dismissViewControllerAnimated:YES completion:^{PPRSLog(@"Dismissed Create Account")}];
+}
+
 @end

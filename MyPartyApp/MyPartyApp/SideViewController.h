@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "AccountViewController.h"
 
+@class SideViewController;
+
+@protocol SideViewControllerDelegate <NSObject>
+
+- (void)SideViewControllerWillSegue;
+
+@end
+
 @interface SideViewController : UITableViewController <AccountViewControllerDelegate>
+
+@property (weak, nonatomic)id <SideViewControllerDelegate> delegate;
 
 @end

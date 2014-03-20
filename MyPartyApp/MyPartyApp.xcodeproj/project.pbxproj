@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF02CF8018D63CD500D3C046 /* SideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF02CF7F18D63CD500D3C046 /* SideViewController.m */; };
+		BF119F4818DA86B8008F0D52 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF119F4718DA86B8008F0D52 /* CreateAccountViewController.m */; };
 		BF1915CA18D7E86200AD9173 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1915C918D7E86200AD9173 /* Main_iPhone.storyboard */; };
 		BF9AA41518D59106001D2D75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9AA41418D59106001D2D75 /* Foundation.framework */; };
 		BF9AA41718D59106001D2D75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9AA41618D59106001D2D75 /* CoreGraphics.framework */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		BF02CF7E18D63CD500D3C046 /* SideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewController.h; sourceTree = "<group>"; };
 		BF02CF7F18D63CD500D3C046 /* SideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewController.m; sourceTree = "<group>"; };
+		BF119F4618DA86B8008F0D52 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		BF119F4718DA86B8008F0D52 /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		BF1915C918D7E86200AD9173 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		BF9AA41118D59106001D2D75 /* MyPartyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPartyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9AA41418D59106001D2D75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -218,6 +221,8 @@
 				BFE514A218DA0244009D053E /* NEViewController.m */,
 				BFE514A418DA024E009D053E /* SettingsViewController.h */,
 				BFE514A518DA024E009D053E /* SettingsViewController.m */,
+				BF119F4618DA86B8008F0D52 /* CreateAccountViewController.h */,
+				BF119F4718DA86B8008F0D52 /* CreateAccountViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				BFE5149D18DA0225009D053E /* AccountViewController.m in Sources */,
 				BFD0F1B218D5969500B74D75 /* MapViewController.m in Sources */,
 				BFD0F1AF18D5932500B74D75 /* PPRevealSideViewController.m in Sources */,
+				BF119F4818DA86B8008F0D52 /* CreateAccountViewController.m in Sources */,
 				BF9AA42118D59106001D2D75 /* main.m in Sources */,
 				BFE514A018DA0237009D053E /* AboutViewController.m in Sources */,
 				BFE5149918D96B9F009D053E /* AppState.m in Sources */,

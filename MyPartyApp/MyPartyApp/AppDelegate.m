@@ -18,16 +18,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //managing the reveal side view controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UINavigationController *nav = [storyboard instantiateViewControllerWithIdentifier:@"nav"];
     self.revealSideViewController = [[PPRevealSideViewController alloc]initWithRootViewController:nav];
     
-    [self.revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionNavigationBar];
-    [self.revealSideViewController setTapInteractionsWhenOpened:PPRevealSideInteractionNavigationBar | PPRevealSideInteractionContentView];
-    [self.revealSideViewController setPanInteractionsWhenOpened:PPRevealSideInteractionNavigationBar];
+    [self.revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionNone];
+    [self.revealSideViewController setTapInteractionsWhenOpened:PPRevealSideInteractionContentView];
+    [self.revealSideViewController setPanInteractionsWhenOpened:PPRevealSideInteractionNone];
     
     UINavigationController *nav2 = [storyboard instantiateViewControllerWithIdentifier:@"nav2"];
-    [self.revealSideViewController preloadViewController:nav2 forSide:PPRevealSideDirectionLeft];
+    [self.revealSideViewController preloadViewController:nav2 forSide:PPRevealSideDirectionBottom];
     
     self.window.rootViewController = self.revealSideViewController;
     

@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "CreateAccountViewController.h"
 #import "PPRevealSideViewController.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <CreateAccountViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessage;
 
+
 - (IBAction)logIn:(id)sender;
+- (IBAction)create:(id)sender;
 
 @end
